@@ -1,6 +1,6 @@
 <div class="rows">
 	<div class="jumbotron">
-		HEADER
+		<%= current_user.email %>
 	</div>
 </div>
 
@@ -12,38 +12,37 @@
 	<div class="col-xs-3">
 		<div class="panel panel-default">
   			<div class="panel-body">
-  				STATS
+  				INFO
 			</div>
 		</div>
 	</div>
 
 	<div class="col-xs-6">
+		<% for @p in @posts%>
 		<div class="panel panel-default">
   			<div class="panel-body">
-  				FEED
+  				<p><%= @p.content %></p>
 			</div>
 		</div>
+		<% end %>
 	</div>
 
 	<div class="col-xs-3">
+		
 		<div class="panel panel-default">
   			<div class="panel-body">
   				ABOUT
 			</div>
 		</div>
-	</div>
-
-</div>
-
-
-<div class="rows" >
-
-	<div class="col-xs-3 col-xs-offset-9">
+		
 		<div class="panel panel-default">
   			<div class="panel-body">
   				TRENDS
 			</div>
+		
 		</div>
 	</div>
 
 </div>
+
+
