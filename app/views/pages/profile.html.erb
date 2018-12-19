@@ -18,6 +18,23 @@
 	</div>
 
 	<div class="col-xs-6">
+
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+  				<%= render '/components/posts_form' %>
+			</div>
+		</div>
+
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<center> <b> Tweets by <%= current_user.email %> </b></center>
+			</div>
+		</div>
+
+
+
 		<% for @p in @posts%>
 		<div class="panel panel-default">
   			<div class="panel-body">
@@ -25,6 +42,9 @@
 			</div>
 		</div>
 		<% end %>
+
+
+
 	</div>
 
 	<div class="col-xs-3">
