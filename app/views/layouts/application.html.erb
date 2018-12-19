@@ -12,7 +12,12 @@
   <body>
     <%= render '/layouts/navbar' %>
     <div class="container">
+
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
+
       <%= yield %>
+
     </div>
   </body>
 </html>
