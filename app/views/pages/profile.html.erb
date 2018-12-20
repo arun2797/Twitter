@@ -1,6 +1,8 @@
 <div class="rows">
 	<div class="jumbotron">
-		<%= current_user.email %>
+		<center>
+			<b><p style="color:#black;font-size:25px;"><%= current_user.email %></p></b>
+		</center>
 	</div>
 </div>
 
@@ -29,7 +31,7 @@
 
 		<div class="panel panel-default">
   			<div class="panel-body">
-				<center> <b> Tweets by <%= current_user.email %> </b></center>
+				<center> <b> Tweets by <%= @username %> </b></center>
 			</div>
 		</div>
 
@@ -51,7 +53,11 @@
 		
 		<div class="panel panel-default">
   			<div class="panel-body">
-  				ABOUT
+  				<b>WHO TO FOLLOW</b>
+  				<% @users.each do |user| %>
+  					<br/>
+  					<a href="/user/<%=user.email%>"><%= user.email %></a>
+  				<% end %>
 			</div>
 		</div>
 		

@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def home
 
   	@posts = Post.all
+    @newPost = Post.new
 
   end
 
@@ -14,6 +15,7 @@ class PagesController < ApplicationController
 
   end
 
+  
   def profile
 
   	if ( User.find_by_email(params[:id]) )
@@ -24,6 +26,9 @@ class PagesController < ApplicationController
 
   	@posts = Post.all.where("user_id=?",User.find_by_email(params[:id]).id)
     @newPost = Post.new
+    @users = User.all
 
   end
+
+
 end

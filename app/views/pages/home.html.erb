@@ -17,17 +17,40 @@
 	</div>
 
 	<div class="col-xs-6">
-		<% for @p in @posts%>
+
+
 		<div class="panel panel-default">
   			<div class="panel-body">
-  				<% @name = User.find_by_id(@p.user_id) %>
-   				<left> <b> <%= @name.email %> </b></left>
-   				<hr style="height:1px;border:none;color:#333;background-color:#333;" />
-  				<p><%= @p.content %></p>
+  				<%= render '/components/posts_form' %>
 			</div>
-		</div>
-		<% end %>
-	</div>
+		</div>	
+
+		<% for @p in @posts%>
+		<div class="panel panel-default">
+  			<div class="panel-body row">
+
+  				<div class="col-sm-1">
+  					<p> PICTURE </p>
+  				</div>
+
+  				<div class="col-sm-11">
+  					<% @name = User.find_by_id(@p.user_id) %>
+  					<p class="post-title"; style="margin-left:25px;"> <b> <%= @name.email %> </b></p>
+  					<p class="post-content"; style="margin-left:25px";> <%= @p.content %> </p>
+  				</div>
+
+  				<div class="col-sm-12" >
+<!--   						  <%= link_to 'Edit', edit_post_path(@p) %><span class="glyphicon glyphicon-pencil"></span>
+ -->        				<%= link_to 'Delete', post_path(@p), data: {:confirm => 'Are you sure?'}, :method => :delete %> <span class="glyphicon glyphicon-remove"></span>
+  				</div>
+
+  			</div>
+
+  		</div>
+  		<% end %>
+
+  	</div>
+
 
 	<div class="col-xs-3">
 		<div class="panel panel-default">
