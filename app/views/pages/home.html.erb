@@ -21,7 +21,7 @@
 
 		<div class="panel panel-default">
   			<div class="panel-body">
-  				<%= render '/components/posts_form' %>
+  				<%= render '/posts/posts_form' %>
 			</div>
 		</div>	
 
@@ -40,8 +40,8 @@
   				</div>
 
   				<div class="col-sm-12" >
-<!--   						  <%= link_to 'Edit', edit_post_path(@p) %><span class="glyphicon glyphicon-pencil"></span>
- -->        				<%= link_to 'Delete', post_path(@p), data: {:confirm => 'Are you sure?'}, :method => :delete %> <span class="glyphicon glyphicon-remove"></span>
+            	<%= link_to 'Edit', edit_post_path(@p) %><span class="glyphicon glyphicon-pencil"></span>
+       				<%= link_to 'Delete', post_path(@p), data: {:confirm => 'Are you sure?'}, :method => :delete %> <span class="glyphicon glyphicon-remove"></span>
   				</div>
 
   			</div>

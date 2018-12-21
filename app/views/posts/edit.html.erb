@@ -1,0 +1,21 @@
+
+<center>
+
+<% @post_to_edit = Post.find_by_id(params[:id]) %>
+<%= form_for @post_to_edit do |f| %>
+
+  <div class="field">
+    <%= f.text_field :content, autofocus: true%>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Add Tweet" %>
+  </div>
+<br>
+<br>
+
+<% end %>
+
+
+</center>

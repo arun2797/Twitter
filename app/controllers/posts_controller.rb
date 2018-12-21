@@ -30,10 +30,25 @@ class PostsController < ApplicationController
 		 	end	
 	end
 
-	# def edit
- #  		@post_to_edit = Post.find(params[:id])
-  		
-	# end
+	def edit
+  		@post_to_edit = Post.find(params[:id])
+	end
+
+	def update
+
+
+		  @post_to_edit = Post.find_by_id(params[:id])
+
+		  if current_user.id == @post_to_edit.user_id
+  		  	@post_to_edit.assign_attributes(post_params)
+  		  	@post_to_edit.save
+  		  	redirect_to "", notice: "Post Edited"
+  		  else
+  		  	redirect_to "", notice: "Cant Edit Other's post"
+  		  end 
+
+
+	end
 
 
 	 private
