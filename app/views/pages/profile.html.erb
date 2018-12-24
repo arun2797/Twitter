@@ -1,7 +1,10 @@
+
+
+
 <div class="rows">
 	<div class="jumbotron">
 		<center>
-			<b><p style="color:#black;font-size:25px;"><%= current_user.email %></p></b>
+			<b><p style="color:#black;font-size:25px;"><%= @username %></p></b>
 		</center>
 	</div>
 </div>
@@ -22,12 +25,13 @@
 
 	<div class="col-xs-6">
 
-
+		<% if user_signed_in? %>
 		<div class="panel panel-default">
   			<div class="panel-body">
   				<%= render '/posts/posts_form' %>
 			</div>
 		</div>	
+		<% end %>
 
 		<% for @p in @posts%>
 		<div class="panel panel-default">
@@ -39,7 +43,7 @@
 
   				<div class="col-sm-11">
   					<% @name = User.find_by_id(@p.user_id) %>
-  					<p class="post-title"; style="margin-left:25px;"> <b> <%= @name.email %> </b></p>
+  					<p class="post-title"; style="margin-left:25px;"> <b> <%= @username %> </b></p>
   					<p class="post-content"; style="margin-left:25px";> <%= @p.content %> </p>
   				</div>
 
@@ -54,7 +58,7 @@
   		<% end %>
 
   	</div>
-  	
+
 
 	<div class="col-xs-3">
 		

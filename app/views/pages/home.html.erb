@@ -1,3 +1,17 @@
+<% if not user_signed_in? %>
+
+    <div class="rows">
+      <div class="jumbotron">
+        <center>
+          <b><p style="color:#black;font-size:25px;"> YOU ARE LOGGED OUT. PLEASE LOG IN TO POST TWEETS. </p></b>
+        </center>
+      </div>
+    </div>
+
+<% end %>
+
+
+
 <div class="rows">
 
 	<div class="col-xs-3">
@@ -18,12 +32,13 @@
 
 	<div class="col-xs-6">
 
-
-		<div class="panel panel-default">
-  			<div class="panel-body">
-  				<%= render '/posts/posts_form' %>
-			</div>
-		</div>	
+    <% if user_signed_in? %>
+  		<div class="panel panel-default">
+    			<div class="panel-body">
+    				<%= render '/posts/posts_form' %>
+  			</div>
+  		</div>	
+    <% end %>
 
 		<% for @p in @posts%>
 		<div class="panel panel-default">
