@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   	@posts = Post.all
     @newPost = Post.new
+    @users = User.all
 
   end
 
@@ -19,6 +20,7 @@ class PagesController < ApplicationController
   def profile
 
   	if ( User.find_by_email(params[:id]) )
+      @user_of_current_profile =  User.find_by_email(params[:id])
   		@username = params[:id]
   	else
   		redirect_to root_path, :notice => "User Not Found"
