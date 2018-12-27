@@ -14,6 +14,9 @@ gem 'devise'
 #GEM FOR FAKE USERS
 gem 'faker'
 
+#FOR SAMPLE IMAGES
+gem 'gravatar_image_tag'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

@@ -1,4 +1,4 @@
-<% @user ||= @user_of_current_profile %>
+<% @user = @user_of_current_profile %>
 <div class="stats">
   <a href="<%= following_user_path(@user) %>">
     <strong id="following" class="stat">

@@ -14,4 +14,19 @@ class RelationshipsController < ApplicationController
 		redirect_to "", notice: "Unfollowed User Successfully " 
 	end
 
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'user/show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'user/show_follow'
+  end
+
 end

@@ -19,9 +19,10 @@ class PagesController < ApplicationController
   
   def profile
 
-  	if ( User.find_by_email(params[:id]) )
-      @user_of_current_profile =  User.find_by_email(params[:id])
-  		@username = params[:id]
+  	if ( User.find_by_id(params[:id]) )
+      puts params[:id]
+      @user_of_current_profile =  User.find_by(:id=>params[:id])
+  		@username = @user_of_current_profile.email
   	else
   		redirect_to root_path, :notice => "User Not Found"
   	end

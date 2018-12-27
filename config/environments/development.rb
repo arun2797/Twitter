@@ -3,6 +3,9 @@ Rails.application.configure do
 
   #FOR DEVISE SIGN IN FUNCTION
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #FOR GRAVATAR
+  config.gem 'gravatar_image_tag'
   
   # Settings specified here will take precedence over those in config/application.rb.
 
