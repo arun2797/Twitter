@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 		@post.user_id = current_user.id
 		respond_to do |f|
 			if (@post.save)
-				f.html {redirect_to "", notice: "Post Created"}
+				f.html {redirect_to request.referrer , notice: "Post Created"}
 			else
 				f.html {redirect_to "", notice: "Error"}
 			end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 			@post_to_delete = Post.find_by_id(params[:id])
 		 	if current_user.id == @post_to_delete.user_id
 		 		@post_to_delete.destroy
-		 		redirect_to "", notice: "Post deleted"
+		 		redirect_to request.referrer, notice: "Post deleted"
 		 	else
 		 		redirect_to "", notice: "Error: Cant Delete Other's posts"
 		 	end	
