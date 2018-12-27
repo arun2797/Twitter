@@ -11,6 +11,9 @@ gem 'bootstrap-sass', '~> 3.4.0'
 #GEM FOR SIGN IN FUNCTION
 gem 'devise'
 
+#GEM FOR FAKE USERS
+gem 'faker'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
