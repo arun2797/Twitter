@@ -4,10 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi <%= @receiver.email %></h1>
-    <p>
-      <h1>Sample mail sent using smtp.<h1>
-      <h4> <%= @body %> <h4>
-    </p>
+    <h1>Hi,This is from <%= @sender.email %></h1>
+    <h1>Mail sent using Twitter clone<h1>
+    
+    <hr style="height:1px;border:none;color:#333;background-color:#333;">
+      
+    <p> <%= @body %> <p>
+      
+    <hr style="height:1px;border:none;color:#333;background-color:#333;">
+    
+    <h2> To continue conversation Contact <%= @sender.email %> </h2>
   </body>
 </html>

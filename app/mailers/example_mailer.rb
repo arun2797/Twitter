@@ -6,10 +6,10 @@ class ExampleMailer < ApplicationMailer
 
   	@sender = sender
   	@receiver = receiver
-  	@subject = subject
+  	@subject = "TwitterClone: " + subject 
   	@body = body
   	
-    mail(from: @sender.email , to: @receiver.email, subject: @subject)
+    mail(to: @receiver.email, subject: @subject)
     
   end
 
