@@ -30,5 +30,16 @@ class UsersController < ApplicationController
 
   end
 
+  def send_mail
+
+    @sender = current_user
+    @receiver = User.find_by_id( params[:receiver_id] )
+    @subject =  params[:p]
+    @body = params[:b]
+    
+    ExampleMailer.sample_email(@sender, @receiver, @subject , @body).deliver
+
+  end
+
 
 end

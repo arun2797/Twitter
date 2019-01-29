@@ -5,7 +5,20 @@
 	<div class="jumbotron">
 		<center>
 			<b><p style="color:#black;font-size:25px;"><%= @username %></p></b>
-		<%= render 'layouts/follow_form' if user_signed_in? %>
+		  <%= render 'layouts/follow_form' if user_signed_in? %><br>
+
+      <div>
+        <%= form_tag "send_mail", method: :post , :authenticity_token => true, remote: true do %>
+
+          <%= hidden_field_tag :receiver_id, @user_of_current_profile.id%>
+          <p> Subject <%= text_field_tag(:p) %> </p>
+          <p> Body <%= text_field_tag(:b) %> </p>
+          <%= submit_tag "Send Mail" %>
+
+        <% end %>
+      </div>
+ 
+
 		</center>
 	</div>
 </div>

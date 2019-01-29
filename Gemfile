@@ -17,6 +17,15 @@ gem 'faker'
 #FOR SAMPLE IMAGES
 gem 'gravatar_image_tag'
 
+#FOR ENV VARIABLES
+gem 'figaro'
+
+#FOR MAIL
+gem "letter_opener"
+gem "launchy"
+gem 'sidekiq'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

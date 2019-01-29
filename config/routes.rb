@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
   get '/explore' => 'pages#explore'
   get '/user/:id' => 'pages#profile'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  match 'user/send_mail' => 'users#send_mail', via: :post
 
 
   
