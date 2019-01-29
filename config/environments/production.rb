@@ -104,7 +104,7 @@ Rails.application.configure do
   :enable_starttls_auto => true
   }
 
-  config.action_mailer.default_url_options = { host: '', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://infinite-journey-95304.herokuapp.com' }
 
 
   # Do not dump schema after migrations.
