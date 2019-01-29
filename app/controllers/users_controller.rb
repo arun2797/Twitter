@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     ExampleMailer.sample_email(@sender, @receiver, @subject , @body).deliver_now
 
     respond_to do |format|
-        format.html {redirect_to "/user/#{@receiver.id}" , notice: "Mail Sent"}
+        format.js {render inline: "location.reload();" }
     end
 
   end
