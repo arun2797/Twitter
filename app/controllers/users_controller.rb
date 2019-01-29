@@ -37,7 +37,11 @@ class UsersController < ApplicationController
     @subject =  params[:p]
     @body = params[:b]
     
-    ExampleMailer.sample_email(@sender, @receiver, @subject , @body).deliver
+    ExampleMailer.sample_email(@sender, @receiver, @subject , @body).deliver_now
+
+    respond_to do |format|
+        format.html {redirect_to request.referrer , notice: "Mail Sent"}
+    end
 
   end
 
