@@ -16,5 +16,14 @@
 
 
 body {
-	background-color: rgba(200,200,200,0.8)
+	background-color: #53aeba
+}
+.jumbotron{
+	background-image: url('/bg2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#post_content{
+	height: 125px;
+	width: 400px;
 }

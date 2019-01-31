@@ -1,12 +1,12 @@
 <% if not user_signed_in? %>
 
-    <div class="rows">
-      <div class="jumbotron">
-        <center>
-          <b><p style="color:#black;font-size:25px;"> YOU ARE LOGGED OUT. PLEASE LOG IN TO POST TWEETS. </p></b>
-        </center>
-      </div>
-    </div>
+<div class="rows">
+  <div class="jumbotron" style="padding: 150px;">
+    <center>
+      <b><p style="color:blue;font-size:25px;font-weight:bold;">YOU ARE NOT LOGGED IN. PLEASE LOGIN TO POST</p></b>
+    </center>
+  </div>
+</div>
 
 
     <div class="rows">
@@ -68,7 +68,13 @@
 
 <% else %>
 
-
+<div class="rows">
+  <div class="jumbotron" style="padding: 150px;">
+    <center>
+      <b><p style="color:#black;font-size:25px;"></p></b>
+    </center>
+  </div>
+</div>
 
 
 

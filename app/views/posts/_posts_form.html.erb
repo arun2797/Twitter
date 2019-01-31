@@ -5,8 +5,10 @@
 <%= form_for(@newPost) do |f| %>
 
   <div class="field">
-    <%= f.text_field :content, autofocus: true%>
+    <%= f.text_area :content, autofocus: true%>
   </div>
+
+  <br>
 
 
   <div class="actions">
